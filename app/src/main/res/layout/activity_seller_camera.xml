@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".SellerCameraActivity"
+    tools:ignore="MissingClass"
+    android:layout_gravity="bottom"
+    android:background="@color/colorPrimaryDark"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/image_preview_container"
+        android:visibility="gone"
+        >
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_flip_camera"
+        android:id="@+id/image_preview_imageview"
+        android:scaleType="centerCrop"
+
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/backdrop_background"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:gravity="center_horizontal"
+            android:id="@+id/backdrop_container"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_retake"
+                    android:text="Retake Image"
+                    style="@style/PrimaryTextButton"
+                    android:onClick="retakeImage"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/product_name"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/textfield_background"
+                    android:inputType="text"
+                    android:hint="Product Name"
+                    android:layout_margin="4dp"
+
+                    />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/textfield_background"
+                    android:drawableStart="@drawable/ic_rupee_indian"
+                    android:drawablePadding="8dp"
+                    android:hint="Price"
+                    android:inputType="number"
+
+                    />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post Ad"
+                android:id="@+id/post_ad_button"
+
+                />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/permission_refused_container"
+        >
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/all_permissions_must_be_granted"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/camera_preview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.camera.view.CameraView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:scaleType="fillCenter"
+            android:id="@+id/cameraView"
+            app:pinchToZoomEnabled="true"
+            app:captureMode="image"
+            app:lensFacing="back"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/image_control_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:minHeight="96dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/flipCameraButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_flip_camera"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/captureButton"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:adjustViewBounds="true"
+                android:background="?android:selectableItemBackground"
+                android:cropToPadding="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_lens_24" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/flashButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+
+                android:src="@drawable/ic_round_flash" />
+        </LinearLayout>
+    </RelativeLayout>
+    
+    <ImageButton
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_store"
+        android:background="?android:selectableItemBackground"
+        android:layout_margin="8dp"
+        android:layout_above="@id/image_preview_container"
+        android:scaleType="centerCrop"
+        android:id="@+id/store_image_button"
+        android:onClick="openStore"
+        />
+</RelativeLayout>

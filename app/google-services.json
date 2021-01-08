@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "337923114238",
+    "firebase_url": "https://instashop-6bd02.firebaseio.com",
+    "project_id": "instashop-6bd02",
+    "storage_bucket": "instashop-6bd02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337923114238:android:73fb0b5dbce014aa6e11af",
+        "android_client_info": {
+          "package_name": "com.makarand.instashop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337923114238-pfvn5m87if0buj68j3scln9b647nqoq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMucMbL56uifSfiBSoqWjSe__8jwRCk-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337923114238-pfvn5m87if0buj68j3scln9b647nqoq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
